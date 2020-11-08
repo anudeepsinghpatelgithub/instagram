@@ -11,6 +11,8 @@
 		FB563DAD2557DC7200238696 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB563DAC2557DC7200238696 /* DatabaseManager.swift */; };
 		FB563DB02557DDA600238696 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB563DAF2557DDA600238696 /* AuthManager.swift */; };
 		FB563DB42557DDF200238696 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB563DB32557DDF200238696 /* StorageManager.swift */; };
+		FB5A80AF2557E35A0088D000 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A80AE2557E35A0088D000 /* Extensions.swift */; };
+		FB5A80B22557E5700088D000 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A80B12557E5700088D000 /* Constants.swift */; };
 		FB6F279A2557BF9300A5BDA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6F27992557BF9300A5BDA9 /* AppDelegate.swift */; };
 		FB6F279C2557BF9300A5BDA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6F279B2557BF9300A5BDA9 /* SceneDelegate.swift */; };
 		FB6F279E2557BF9300A5BDA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6F279D2557BF9300A5BDA9 /* HomeViewController.swift */; };
@@ -41,6 +43,8 @@
 		FB563DAC2557DC7200238696 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		FB563DAF2557DDA600238696 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		FB563DB32557DDF200238696 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FB5A80AE2557E35A0088D000 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FB5A80B12557E5700088D000 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FB6F27962557BF9300A5BDA9 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6F27992557BF9300A5BDA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB6F279B2557BF9300A5BDA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				FB563DAC2557DC7200238696 /* DatabaseManager.swift */,
 				FB563DAF2557DDA600238696 /* AuthManager.swift */,
 				FB563DB32557DDF200238696 /* StorageManager.swift */,
+				FB5A80AE2557E35A0088D000 /* Extensions.swift */,
+				FB5A80B12557E5700088D000 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6F27B62557C26B00A5BDA9 /* ExploreViewController.swift in Sources */,
+				FB5A80B22557E5700088D000 /* Constants.swift in Sources */,
 				FB6F27B92557C29000A5BDA9 /* CameraViewController.swift in Sources */,
 				FB6F27E22557C54500A5BDA9 /* PublishPostViewController.swift in Sources */,
 				FB6F27D02557C40B00A5BDA9 /* SettingsViewController.swift in Sources */,
@@ -345,6 +352,7 @@
 				FB6F27BC2557C2A500A5BDA9 /* NotificationsViewController.swift in Sources */,
 				FB6F27DC2557C4F100A5BDA9 /* SearchResultViewController.swift in Sources */,
 				FB6F27C62557C35D00A5BDA9 /* LoginViewController.swift in Sources */,
+				FB5A80AF2557E35A0088D000 /* Extensions.swift in Sources */,
 				FB6F27D92557C46700A5BDA9 /* SearchViewController.swift in Sources */,
 				FB6F27D32557C43600A5BDA9 /* EditProfileViewController.swift in Sources */,
 				FB563DB02557DDA600238696 /* AuthManager.swift in Sources */,
@@ -501,6 +509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,6 +529,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
