@@ -12,11 +12,58 @@ public class AuthManager {
     
     // MARK: - public
     
-    public func registerNewUser(username: String, email: String, password: String){
+    public func registerNewUser(username: String, email: String, password: String, completion: @escaping (Bool)->Void){
+        DatabaseManager.shared.canCreateNewUser(with: email, username: username) { canCreate in
+            if canCreate {
+                // create account
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    guard error == nil , authResult != nil else {
+                        print("ok1")
+                        completion(false)
+                        return
+                    }
+                    // insert into db
+                    DatabaseManager.shared.insertNewUser(email: email, username: username, uid: (authResult?.user.uid)!) { (success) in
+                        if success {
+                            print("saved")
+                            completion(true)
+                        }else {
+                            print("failed")
+                            completion(false)
+                        }
+                    }
+//                    DatabaseManager.shared.adduser(email: email) { (success) in
+//                        if success {
+//                            print("saved")
+//                            completion(true)
+//                        }else {
+//                            print("failed")
+//                            completion(false)
+//                        }
+//                    }
+                }
+            }else {
+                print("canCreate failed")
+                completion(false)
+            }
+        }
         
     }
     
-    public func loginUser(username: String, email: String?, password: String){
-        
+    public func loginUser(username: String?, email: String?, password: String, completion: @escaping (Bool) -> Void){
+        if let email = email {
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                guard authResult != nil , error == nil else {
+                    print("invalid data")
+                    completion(false)
+                    return
+                }
+                completion(true)
+            }
+            
+        }else if let username = username {
+            //user name login
+            print(username)
+        }
     }
 }

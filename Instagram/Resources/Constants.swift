@@ -9,4 +9,5 @@ import UIKit
 
 struct Constants {
     static let cornerRadius: CGFloat = 8.0
+    static let userTable:String = "users"
 }

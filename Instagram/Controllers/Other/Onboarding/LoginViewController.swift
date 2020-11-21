@@ -146,12 +146,34 @@ class LoginViewController: UIViewController {
         }
         
         //login
-        
+        var username: String?
+        var email: String?
+        if useremail.contains("@"),useremail.contains("."){
+            //email
+            email = useremail
+        }else {
+            //username
+            username = useremail
+        }
+        AuthManager.shared.loginUser(username: username, email: email, password: password) { success in
+            DispatchQueue.main.async {
+                if success {
+                    print("user loggedin")
+                    self.dismiss(animated: true, completion: nil)
+                }else {
+                    print("error occured")
+                    let alert = UIAlertController(title: "Login Error", message: "Something went wrong, Try Again!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+        }
     }
     
     @objc private func didTapCreateAccountButton(){
         let vc = RegistrationViewController()
-       present(vc, animated: true)
+        vc.title = "Create Account"
+       present(UINavigationController(rootViewController: vc), animated: true)
     }
     
     @objc private func didTapTermsButton(){
