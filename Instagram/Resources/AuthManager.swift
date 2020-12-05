@@ -32,15 +32,6 @@ public class AuthManager {
                             completion(false)
                         }
                     }
-//                    DatabaseManager.shared.adduser(email: email) { (success) in
-//                        if success {
-//                            print("saved")
-//                            completion(true)
-//                        }else {
-//                            print("failed")
-//                            completion(false)
-//                        }
-//                    }
                 }
             }else {
                 print("canCreate failed")
@@ -64,6 +55,18 @@ public class AuthManager {
         }else if let username = username {
             //user name login
             print(username)
+        }
+    }
+    
+    public func logOutUser(completion:(Bool)->Void){
+        do{
+            try Auth.auth().signOut()
+            completion(true)
+            return
+        }catch{
+            print(error)
+            completion(false)
+            return
         }
     }
 }
